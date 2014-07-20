@@ -44,7 +44,8 @@ class DescribeBlockCommand extends Command
         $this
             ->setName('describe:block')
             ->setDescription('Describe a Magento Block specification')
-            ->addArgument('block_alias', InputArgument::REQUIRED, 'Magento Block alias to be described');
+            ->addArgument('block_alias', InputArgument::REQUIRED, 'Magento Block alias to be described')
+            ->addOption('community', null, InputOption::VALUE_NONE, 'If set the specification will be created in the community code pool');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
