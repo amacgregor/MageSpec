@@ -44,8 +44,7 @@ class DescribeControllerCommand extends Command
         $this
             ->setName('describe:controller')
             ->setDescription('Describe a Magento Controller specification')
-            ->addArgument('controller_alias', InputArgument::REQUIRED, 'Magento Controller alias to be described')
-            ->addOption('community', null, InputOption::VALUE_NONE, 'If set the specification will be created in the community code pool');
+            ->addArgument('controller_alias', InputArgument::REQUIRED, 'Magento Controller alias to be described');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)

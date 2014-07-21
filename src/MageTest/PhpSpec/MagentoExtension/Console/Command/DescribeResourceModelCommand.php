@@ -44,8 +44,7 @@ class DescribeResourceModelCommand extends Command
         $this
             ->setName('describe:resource_model')
             ->setDescription('Describe a Magento Resource Model specification')
-            ->addArgument('resource_model_alias', InputArgument::REQUIRED, 'Magento Resource Model alias to be described')
-            ->addOption('community', null, InputOption::VALUE_NONE, 'If set the specification will be created in the community code pool');
+            ->addArgument('resource_model_alias', InputArgument::REQUIRED, 'Magento Resource Model alias to be described');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
