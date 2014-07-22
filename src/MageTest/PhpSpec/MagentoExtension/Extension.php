@@ -158,7 +158,7 @@ class Extension implements ExtensionInterface
             $specPrefix = isset($suite['spec_prefix']) ? $suite['spec_prefix'] : '';
             $srcPath = isset($suite['src_path']) ? rtrim($suite['src_path'], '/') . DIRECTORY_SEPARATOR : 'src';
             $specPath = isset($suite['spec_path']) ? rtrim($suite['spec_path'], '/') . DIRECTORY_SEPARATOR : '.';
-            $codePool = isset($suite['code_pool']) ? $suite['code_pool'] : '';
+            $codePool = isset($suite['code_pool']) ? $suite['code_pool'] : 'local';
             $filesystem = null;
 
             if (!is_dir($srcPath)) {
@@ -198,12 +198,12 @@ class Extension implements ExtensionInterface
                 }
             );
 
-            $extension->configureAutoloader($srcPath);
+            $extension->configureAutoloader($srcPath, $codePool);
         });
     }
 
-    public function configureAutoloader($srcPath)
+    public function configureAutoloader($srcPath, $codePool)
     {
-        MageLoader::register($srcPath);
+        MageLoader::register($srcPath, $codePool);
     }
 }
